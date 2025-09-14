@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/kotakunp/chatly/issues"
   },
-  "homepage": "https://github.com/kotakunp/chatly#readme"
+  "homepage": "https://github.com/kotakunp/chatly#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "resend": "^6.0.3",
+    "tailwindcss": "^4.1.13"
+  }
 }
