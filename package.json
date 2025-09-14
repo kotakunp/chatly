@@ -24,6 +24,7 @@
   "homepage": "https://github.com/kotakunp/chatly#readme",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "cloudinary": "^2.5.1",
     "resend": "^6.0.3",
     "tailwindcss": "^4.1.13"
   }
