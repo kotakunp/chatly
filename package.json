@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/kotakunp/chatly#readme",
   "dependencies": {
-    "@arcjet/inspect": "^1.0.0-beta.10",
-    "@arcjet/node": "^1.0.0-beta.10",
     "@tailwindcss/vite": "^4.1.13",
     "cloudinary": "^2.5.1",
     "resend": "^6.0.3",
