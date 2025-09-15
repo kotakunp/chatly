@@ -6,43 +6,113 @@ export function createWelcomeEmailTemplate(name, clientURL) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Chatly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      .header {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #3662e3;
+        color: #ffffff;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 600;
+      }
+      .content {
+        padding: 30px 40px;
+      }
+      .content h2 {
+        font-size: 22px;
+        font-weight: 500;
+        color: #1a1a1a;
+        margin-top: 0;
+      }
+      .content p {
+        color: #555;
+        font-size: 16px;
+      }
+      .cta-button {
+        display: inline-block;
+        background-color: #3662e3;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 500;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+      .cta-button:hover {
+        background-color: #2b51c6;
+      }
+      .list {
+        list-style-type: none;
+        padding: 0;
+        margin: 25px 0;
+      }
+      .list-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 16px;
+        color: #444;
+      }
+      .list-item:last-child {
+        border-bottom: none;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px 40px;
+        font-size: 12px;
+        color: #999;
+        border-top: 1px solid #eee;
+        margin-top: 30px;
+      }
+    </style>
   </head>
-  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
-    <div style="background: linear-gradient(to right, #36D1DC, #5B86E5); padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
-      <img src="https://img.freepik.com/free-vector/hand-drawn-message-element-vector-cute-sticker_53876-118344.jpg?t=st=1741295028~exp=1741298628~hmac=0d076f885d7095f0b5bc8d34136cd6d64749455f8cb5f29a924281bafc11b96c&w=1480" alt="Messenger Logo" style="width: 80px; height: 80px; margin-bottom: 20px; border-radius: 50%; background-color: white; padding: 10px;">
-      <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 500;">Welcome to Messenger!</h1>
-    </div>
-    <div style="background-color: #ffffff; padding: 35px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-      <p style="font-size: 18px; color: #5B86E5;"><strong>Hello ${name},</strong></p>
-      <p>We're excited to have you join our messaging platform! Messenger connects you with friends, family, and colleagues in real-time, no matter where they are.</p>
-      
-      <div style="background-color: #f8f9fa; padding: 25px; border-radius: 10px; margin: 25px 0; border-left: 4px solid #36D1DC;">
-        <p style="font-size: 16px; margin: 0 0 15px 0;"><strong>Get started in just a few steps:</strong></p>
-        <ul style="padding-left: 20px; margin: 0;">
-          <li style="margin-bottom: 10px;">Set up your profile picture</li>
-          <li style="margin-bottom: 10px;">Find and add your contacts</li>
-          <li style="margin-bottom: 10px;">Start a conversation</li>
-          <li style="margin-bottom: 0;">Share photos, videos, and more</li>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Welcome to Chatly!</h1>
+      </div>
+      <div class="content">
+        <h2>Hello ${name},</h2>
+        <p>We're thrilled to have you join the Chatly community. Our platform is designed to make real-time communication simple, fast, and reliable. Connect with friends and family instantly, share moments, and create new conversations.</p>
+        
+        <p>You can get started right away by exploring these features:</p>
+        
+        <ul class="list">
+          <li class="list-item">🚀 Start a new conversation</li>
+          <li class="list-item">📸 Share photos and videos</li>
+          <li class="list-item">💬 Connect with your contacts</li>
         </ul>
+        
+        <div style="text-align: center;">
+          <a href="${clientURL}" class="cta-button">Open Chatly</a>
+        </div>
+        
+        <p>If you have any questions or need support, our team is always here to help.</p>
+        <p>Happy chatting!<br>The Chatly Team</p>
       </div>
-      
-      <div style="text-align: center; margin: 30px 0;">
-        <a href=${clientURL} style="background: linear-gradient(to right, #36D1DC, #5B86E5); color: white; text-decoration: none; padding: 12px 30px; border-radius: 50px; font-weight: 500; display: inline-block;">Open Messenger</a>
+      <div class="footer">
+        <p>© 2025 Chatly. All rights reserved.</p>
       </div>
-      
-      <p style="margin-bottom: 5px;">If you need any help or have questions, we're always here to assist you.</p>
-      <p style="margin-top: 0;">Happy messaging!</p>
-      
-      <p style="margin-top: 25px; margin-bottom: 0;">Best regards,<br>The Messenger Team</p>
-    </div>
-    
-    <div style="text-align: center; padding: 20px; color: #999; font-size: 12px;">
-      <p>© 2025 Messenger. All rights reserved.</p>
-      <p>
-        <a href="#" style="color: #5B86E5; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
-        <a href="#" style="color: #5B86E5; text-decoration: none; margin: 0 10px;">Terms of Service</a>
-        <a href="#" style="color: #5B86E5; text-decoration: none; margin: 0 10px;">Contact Us</a>
-      </p>
     </div>
   </body>
   </html>
