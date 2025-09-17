@@ -3,7 +3,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
 import { LockIcon, MailIcon, MessageCircleIcon, UserIcon } from "lucide-react";
 import { LoaderIcon } from "react-hot-toast";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 function SignUpPage() {
   const [formData, setFormData] = useState({
