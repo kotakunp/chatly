@@ -23,7 +23,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 if (ENV.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../frontend/dist")));
+    const staticPath = path.join(__dirname, "../frontend/dist");
+    console.log("Serving static files from:", staticPath);
 
     app.get("*", (_, res) => {
         res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
