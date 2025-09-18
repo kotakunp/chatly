@@ -23,7 +23,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 if (ENV.NODE_ENV === "production") {
-    const distPath = path.join(__dirname, "dist");
+    const distPath = path.join(__dirname, "../dist");
     app.use(express.static(distPath));
 
     app.get("*", (_, res) => {
