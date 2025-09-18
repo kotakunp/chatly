@@ -24,11 +24,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 if (ENV.NODE_ENV === "production") {
-    const staticPath = path.join(__dirname, "../frontend/dist");
-    console.log("Serving static files from:", staticPath);
+    const staticPath = path.join(__dirname, "../../frontend/dist");
+
+    app.use(express.static(staticPath));
 
     app.get("*", (_, res) => {
-        res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+        res.sendFile(path.join(__dirname, "../../frontend", "dist", "index.html"));
     });
 }
 
