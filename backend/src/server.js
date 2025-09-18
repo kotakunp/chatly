@@ -5,14 +5,15 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { connectDB } from "./lib/db.js";
 import { ENV } from "./lib/env.js";
-
+import { fileURLToPath } from "url";
 import { app, server } from "./lib/socket.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 
 dotenv.config();
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const PORT = ENV.PORT || 3000;
 
 app.use(express.json({ limit: "5mb" }));
