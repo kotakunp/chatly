@@ -21,7 +21,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 if (ENV.NODE_ENV === "production") {
-    const staticPath = path.join(__dirname, "dist");
+    const staticPath = path.join(__dirname, "../../frontend/dist");
     console.log("Serving frontend from:", staticPath);
 
     app.use(express.static(staticPath));
