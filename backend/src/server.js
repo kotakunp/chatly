@@ -21,16 +21,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 if (ENV.NODE_ENV === "production") {
-    const staticPath = path.join(__dirname, "dist");
-    console.log("Serving frontend from:", staticPath);
+    app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-    app.use(express.static(staticPath));
     app.get("*", (_, res) => {
-        res.sendFile(path.join(staticPath, "index.html"));
+        res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
     });
 }
 
-server.listen(PORT, async () => {
+server.listen(PORT, () => {
     console.log("Server running on port: " + PORT);
-    await connectDB();
+    connectDB();
 });

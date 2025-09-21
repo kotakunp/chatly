@@ -78,7 +78,6 @@ export const useChatStore = create((set, get) => ({
             const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
             set({ messages: messages.concat(res.data) });
         } catch (error) {
-            // remove optimistic message on failure
             set({ messages: messages });
             toast.error(error.response?.data?.message || "Something went wrong");
         }
@@ -100,7 +99,7 @@ export const useChatStore = create((set, get) => ({
             if (isSoundEnabled) {
                 const notificationSound = new Audio("/sounds/notification.mp3");
 
-                notificationSound.currentTime = 0; // reset to start
+                notificationSound.currentTime = 0;
                 notificationSound.play().catch((e) => console.log("Audio play failed:", e));
             }
         });
